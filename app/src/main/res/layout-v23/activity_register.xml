@@ -51,8 +51,7 @@
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
             android:importantForAutofill="no"
-            android:autofillHints=""
-            tools:ignore="LabelFor" />
+            android:autofillHints="" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -106,7 +105,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_register">
 
-
+        
         <TextView
             android:id="@+id/tv_already_have_an_account"
             android:layout_width="wrap_content"
@@ -123,9 +122,7 @@
             android:layout_marginTop="16dp"
             android:padding="5dp"
             android:text="@string/login"
-            android:textStyle="bold"
-            tools:targetApi="m"
-            tools:ignore="UnusedAttribute" />
+            android:textStyle="bold"/>
 
     </LinearLayout>
 

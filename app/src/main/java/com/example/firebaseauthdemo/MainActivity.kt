@@ -7,7 +7,6 @@ import android.net.ConnectivityManager
 import android.net.NetworkInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
@@ -47,7 +46,7 @@ open class MainActivity : AppCompatActivity() {
         mProgressDialog.dismiss()
     }
 
-    fun checkInternetConnection() {
+    private fun checkInternetConnection() {
         // checking for the internet connection...
         val connect: ConnectivityManager = this.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val activeNetwork: NetworkInfo? = connect.activeNetworkInfo

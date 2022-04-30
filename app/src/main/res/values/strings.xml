@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">FireBaseAuthDemo</string>
+    <string name="email_id">Email Id</string>
+    <string name="password">Password</string>
+    <string name="register_screen">REGISTER SCREEN</string>
+    <string name="login">Login</string>
+    <string name="create_an_account">Create an Account</string>
+    <string name="image">Image</string>
+    <string name="already_have_an_account">Already have an account</string>
 </resources>
