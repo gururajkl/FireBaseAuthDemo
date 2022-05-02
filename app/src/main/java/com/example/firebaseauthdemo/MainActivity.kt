@@ -21,7 +21,7 @@ open class MainActivity : AppCompatActivity() {
 
         val emailId = intent.getStringExtra("email_id")
 
-        tv_password_id.text = emailId
+        tv_password_id.text = "LogIn Success $emailId"
 
         btn_logout.setOnClickListener {
             showProgressDialog()
@@ -55,7 +55,7 @@ open class MainActivity : AppCompatActivity() {
         if (!isCon) {
             startActivity(Intent(this, RefreshActivity::class.java))
             finish()
-            Toast.makeText(this, "Your internet is turned off!!", Toast.LENGTH_LONG).show()
+            //Toast.makeText(this, "Your internet is turned off!!", Toast.LENGTH_LONG).show()
         }
     }
 }

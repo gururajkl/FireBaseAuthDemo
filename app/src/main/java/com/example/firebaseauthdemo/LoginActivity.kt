@@ -30,7 +30,10 @@ class LoginActivity : MainActivity() {
         val isUserIdExist = FirebaseAuth.getInstance().currentUser?.uid
         if (isUserIdExist != null) {
             if (isUserIdExist.isNotEmpty()) {
-                startActivity(Intent(this, MainActivity::class.java))
+                val intent = Intent(this, MainActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                intent.putExtra("email_id", FirebaseAuth.getInstance().currentUser!!.email)
+                startActivity(intent)
                 finish()
             } else {
                 startActivity(Intent(this, LoginActivity::class.java))
@@ -69,7 +72,7 @@ class LoginActivity : MainActivity() {
                                 // Indicate user by toast that acc is created
                                 Toast.makeText(
                                     this,
-                                    "You are registered successfully",
+                                    "Registration success",
                                     Toast.LENGTH_LONG
                                 ).show()
                                 hideProgressDialog()
@@ -132,7 +135,7 @@ class LoginActivity : MainActivity() {
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d("TAG", "signInWithCredential:success")
-                    Toast.makeText(this, "SignIn Success", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Hey There \uD83D\uDC4B", Toast.LENGTH_LONG).show()
                     hideProgressDialog()
                     val user = auth.currentUser
                     updateUI(user)
