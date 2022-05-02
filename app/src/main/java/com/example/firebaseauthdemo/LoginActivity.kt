@@ -1,5 +1,6 @@
 package com.example.firebaseauthdemo
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.net.ConnectivityManager
@@ -7,6 +8,7 @@ import android.net.NetworkInfo
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -16,6 +18,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.activity_login.et_login_email
+import kotlinx.android.synthetic.main.activity_otp.*
 
 class LoginActivity : MainActivity() {
 
@@ -45,6 +49,11 @@ class LoginActivity : MainActivity() {
 
         tv_register.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
+        }
+
+        //OTP button
+        reg_with_phone.setOnClickListener {
+            startActivity(Intent(this, OtpActivity::class.java))
         }
 
         // when user clicks on the register button

@@ -4,7 +4,6 @@ import android.app.Dialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
 import kotlinx.android.synthetic.main.activity_refresh.*
 
 class RefreshActivity : AppCompatActivity() {
@@ -21,16 +20,12 @@ class RefreshActivity : AppCompatActivity() {
         }
     }
 
-    fun showProgressDialog() {
+    private fun showProgressDialog() {
         // setting the var to dialog of this activity
         mProgressDialog = Dialog(this)
         // setting the content
         mProgressDialog.setContentView(R.layout.dialog_progress)
         // showing the dialog
         mProgressDialog.show()
-    }
-
-    fun hideProgressDialog() {
-        mProgressDialog.dismiss()
     }
 }

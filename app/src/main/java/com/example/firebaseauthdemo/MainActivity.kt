@@ -1,5 +1,6 @@
 package com.example.firebaseauthdemo
 
+import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Context
 import android.content.Intent
@@ -14,6 +15,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 open class MainActivity : AppCompatActivity() {
     private lateinit var mProgressDialog: Dialog
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         checkInternetConnection()
@@ -21,7 +23,11 @@ open class MainActivity : AppCompatActivity() {
 
         val emailId = intent.getStringExtra("email_id")
 
-        tv_password_id.text = "LogIn Success $emailId"
+        if (emailId == "") {
+            tv_password_id.text = "Hey there! \uD83D\uDC4B"
+        } else {
+            tv_password_id.text = "Login Success $emailId"
+        }
 
         btn_logout.setOnClickListener {
             showProgressDialog()
@@ -55,7 +61,6 @@ open class MainActivity : AppCompatActivity() {
         if (!isCon) {
             startActivity(Intent(this, RefreshActivity::class.java))
             finish()
-            //Toast.makeText(this, "Your internet is turned off!!", Toast.LENGTH_LONG).show()
         }
     }
 }

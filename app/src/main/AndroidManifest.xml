@@ -10,11 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FireBaseAuthDemo">
         <activity
+            android:name=".OtpActivity"
+            android:exported="false" />
+        <activity
             android:name=".RefreshActivity"
             android:exported="false" />
         <activity
             android:name=".RegisterActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".LoginActivity"
             android:exported="true">
