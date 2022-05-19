@@ -1,14 +1,10 @@
 package com.example.firebaseauthdemo
 
-import android.annotation.SuppressLint
-import android.content.Context
+
 import android.content.Intent
-import android.net.ConnectivityManager
-import android.net.NetworkInfo
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
-import android.view.View
 import android.widget.Toast
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -19,7 +15,6 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_login.et_login_email
-import kotlinx.android.synthetic.main.activity_otp.*
 
 class LoginActivity : MainActivity() {
 
@@ -54,6 +49,12 @@ class LoginActivity : MainActivity() {
         //OTP button
         reg_with_phone.setOnClickListener {
             startActivity(Intent(this, OtpActivity::class.java))
+        }
+        
+        // Github button
+        reg_with_github.setOnClickListener {
+            Toast.makeText(this, "Under Testing!", Toast.LENGTH_SHORT).show()
+            //startActivity(Intent(this, GithubActivity::class.java))
         }
 
         // when user clicks on the register button
@@ -108,7 +109,7 @@ class LoginActivity : MainActivity() {
 
         // Configure Google Sign In
         gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id))
+            .requestIdToken(getString(R.string.default_web_client_id_not_original))
             .requestEmail()
             .build()
         googleSignInClient = GoogleSignIn.getClient(this, gso)
@@ -119,6 +120,7 @@ class LoginActivity : MainActivity() {
         startActivityForResult(signInIntent, RcSignIn)
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -151,8 +153,8 @@ class LoginActivity : MainActivity() {
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w("TAG", "signInWithCredential:failure", task.exception)
+                    Toast.makeText(this, "Unable to login", Toast.LENGTH_LONG).show()
                     hideProgressDialog()
-                    updateUI(null)
                 }
             }
     }

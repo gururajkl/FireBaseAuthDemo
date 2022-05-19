@@ -7,4 +7,8 @@
     <string name="create_an_account">Create an Account</string>
     <string name="image">Image</string>
     <string name="already_have_an_account">Already have an account</string>
+    <string name="default_web_client_id_not_original" translatable="false">182456292642-7skmdin5q9rk3et2tt2lpeb416eueslo.apps.googleusercontent.com</string>
+    <string name="scan_your_finger">Scan your finger</string>
+    <string name="retry">retry</string>
+    <string name="app_icon">App Icon</string>
 </resources>

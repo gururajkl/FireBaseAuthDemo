@@ -10,4 +10,5 @@
     <color name="colorPrimary">#ED2173</color>
     <color name="colorPrimaryDark">#222934</color>
     <color name="colorAccent">#ED2173</color>
+    <color name="color_btn_github">#FF000000</color>
 </resources>
